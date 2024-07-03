@@ -15,7 +15,7 @@ jobs:
     - name: setup up jdk 17
       uses: actions/setup-java@v3
       with:
-        java-version: 17
+        java-version: '17'
 	distribution: 'temurin'
 	cache: gradle
 
