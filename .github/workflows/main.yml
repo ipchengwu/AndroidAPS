@@ -18,7 +18,12 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build Release APK
-      run: ./gradlew assembleRelease
+      run: |
+        export storePassword=${{ secrets.STORE_PASSWORD }}
+        export keyAlias=${{ secrets.KEY_ALIAS }}
+        export keyPassword=${{ secrets.KEY_PASSWORD }}
+        export storeFile=${{ secrets.STORE_FILE }}
+        ./gradlew assembleFullRelease
     - name: Releasing using Hub
       uses: actions/upload-artifact@v2
       with:
