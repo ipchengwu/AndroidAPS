@@ -21,6 +21,9 @@ jobs:
       run: ./gradlew assembleRelease
     - name: Releasing using Hub
       uses: actions/upload-artifact@v2
+      with:
+        name: app
+        path: app/build/outputs/apk/full/release
       env:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
        APP_FOLDER: app
