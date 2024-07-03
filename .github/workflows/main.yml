@@ -12,13 +12,11 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v3
-    - name: setup up jdk 17
+    - name: setup jdk
       uses: actions/setup-java@v3
       with:
-        java-version: '17'
-	distribution: 'temurin'
+        java-version: 15
 	cache: gradle
-
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build Release APK
