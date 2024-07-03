@@ -1,6 +1,5 @@
-
 name: Build & Publish Release APK
- 
+
 on:
   push:
     tags:
@@ -16,7 +15,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 17
-	cache: gradle
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build Release APK
